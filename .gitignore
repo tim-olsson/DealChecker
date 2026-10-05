@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local secrets and ADK local storage (sessions DB)
+.env
+.adk/
+
+# Eval run outputs (regenerate with tests/eval/run_eval.py)
+tests/eval/results/
+
+# Local working notes (AgentOps rubric tracker), not part of the project
+RUBRIC.md
+
+# Lockfile pins an internal package proxy; regenerate with `uv sync`
+uv.lock
+
+# Real listing screenshots and fixtures derived from them (see README "Eval images")
+screenshots/*
+!screenshots/.gitkeep
+tests/eval/fixtures/

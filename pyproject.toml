@@ -1,0 +1,30 @@
+[project]
+name = "dealchecker"
+version = "0.1.0"
+description = "ADK agent that checks second-hand marketplace listings from screenshots and validates price and product with Google Search."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.13"
+dependencies = [
+    "google-adk[gcp]>=2.9.2",
+    "google-cloud-logging>=3.17.0",
+    "python-dotenv>=1.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "deal_checker"
+
+[dependency-groups]
+dev = [
+    "pillow>=12.3.0",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"
+filterwarnings = ["ignore::UserWarning", "ignore::DeprecationWarning"]
